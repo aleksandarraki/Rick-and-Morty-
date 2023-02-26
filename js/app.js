@@ -10,20 +10,27 @@ const getData = () => {
 getData();
 
 const onImgClick = event => {
-    console.log("cao");
+    // console.log("cao");
     const targetEl = event.target.closest(".imgClass");
-    console.log(targetEl);
-    if (!targetEl.classList.contains(".imgClass")) {
-        return;
-    }
-    const id = targetEl.getAttribute("id");
+    // console.log(targetEl);
+    // if (!targetEl.classList.contains(".imgClass")) {
+    //     return;
+    // }
+    const id = targetEl.parentNode.getAttribute("id");
     // console.log(id);
     getSingleCharacter(id).then(character => {
         renderSingleCaracter(character);
     })
 }
 
+const onBackButtonClick = e => {
+    const targetEl = e.target.parentNode.parentNode.parentNode;
+    if (!targetEl.classList.contains("character-wrapper")) {
+        return;
+    };
+    getCharacters().then(character => { renderCharacters(character) });
+};
 
 
-
-mainContentEl.addEventListener("click", onImgClick)
+mainContentEl.addEventListener("click", onImgClick);
+mainContentEl.addEventListener("click", onBackButtonClick);

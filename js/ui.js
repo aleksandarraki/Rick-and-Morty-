@@ -8,7 +8,7 @@ export const renderCharacters = (characters) => {
 
     characters.forEach(element => {
         html += `
-        <div class="show-item card pt-3 ” style=“width: 18rem;“> id="${element.id}">
+        <div class="show-item card  ” style=“width: 18rem;“> id="${element.id}">
            <img src="${element.image}" alt="show cover image" class="card-img-top imgClass" img-thumbnail/>
            <p>${element.name}</p>
 

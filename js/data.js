@@ -23,11 +23,14 @@ export const getCharacters = () => {
 
 
 export const getSingleCharacter = id => {
-    return fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    return fetch(`https://rickandmortyapi.com/api/character/1`)
         .then(response => response.json())
         .then(object => {
             return new Character(object.id, object.image, object.name, object.status, object.species, object.gender, object.origin.name, object.location.name);
         });
 };
+
+
+
 
 
