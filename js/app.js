@@ -31,6 +31,15 @@ const onBackButtonClick = e => {
     getCharacters().then(character => { renderCharacters(character) });
 };
 
+const likeButtonClick = e => {
+    const likeButton = e.target;
+    if (!likeButton.classList.contains("like-button")) {
+        return;
+    };
+    likeButton.classList.toggle("liked");
+}
+
 
 mainContentEl.addEventListener("click", onImgClick);
 mainContentEl.addEventListener("click", onBackButtonClick);
+mainContentEl.addEventListener("click", likeButtonClick);
