@@ -11,13 +11,14 @@ getData();
 
 const onImgClick = event => {
     // console.log("cao");
-    const targetEl = event.target.closest(".imgClass");
-    // console.log(targetEl);
+    const targetEl = event.target;
+    console.log(targetEl);
     // if (!targetEl.classList.contains(".imgClass")) {
     //     return;
     // }
-    const id = targetEl.parentNode.getAttribute("id");
-    // console.log(id);
+    console.log(targetEl.parentElement);
+    const id = targetEl.parentElement.getAttribute("id");
+    console.log(id);
     getSingleCharacter(id).then(character => {
         renderSingleCaracter(character);
     })
